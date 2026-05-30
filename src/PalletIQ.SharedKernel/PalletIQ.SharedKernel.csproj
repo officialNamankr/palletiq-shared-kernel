@@ -4,6 +4,14 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<PackageId>PalletIQ.SharedKernel</PackageId>
+	<Version>1.0.0</Version>
+	<Authors>Naman Kumar</Authors>
+	<Company>PalletIQ</Company>
+	<Description>Shared Kernel for PalletIQ</Description>
+	<PackageTags>PalletIQ;sharedkernel;ddd</PackageTags>
+	<RepositoryUrl>https://github.com/officialNamankr/palletiq-shared-kernel.git</RepositoryUrl>
+	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,0 +1,41 @@
+# .github.workflows/publish.yml
+name: Publish PalletIQ.SharedKernel to GitHub Packages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup .Net 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore Dependencies
+        run: dotnet restore src/PalletIQ.SharedKernel/PalletIQ.SharedKernel.csproj
+
+      - name: Build
+        run: dotnet build src/PalletIQ.SharedKernel/PalletIQ.SharedKernel.csproj
+             --configuration Release --no-restore
+
+      - name: Pack Nuget Package
+        run: dotnet pack src/PalletIQ.SharedKernel/PalletIQ.SharedKernel.csproj
+             --configuration Release --no-build -o ./nupkg
+      - name: Publish to GitHub Packages
+        run: dotnet nuget push ./nupkg/*.nupkg
+              --api-key ${{ secrets.GITHUB_TOKEN }}
+              --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
+              --skip-duplicate
+
+
+  
