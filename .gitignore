@@ -1,0 +1,69 @@
+# Visual Studio / .NET Core
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+TestResults/
+*.log
+
+# NuGet
+*.nupkg
+# The packages folder can be ignored because of PackageReference
+packages/
+.project.lock.json
+project.lock.json
+.nuget/
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+*.sln.iml
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# DotCover
+*.dotCover
+
+# Entity Framework
+*.dbmdl
+
+# Publish output
+publish/
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# User secrets (if used locally)
+secrets.json
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Generated AssemblyInfo
+Properties/AssemblyInfo.*
+
+# Rider cache
+.idea/
+
+# Keep user-specific files out of repo
+*.userprefs
+
+# End of file
